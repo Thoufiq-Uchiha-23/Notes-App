@@ -1,18 +1,15 @@
 import './App.css'
-import { useSelector, useDispatch } from 'react-redux'
-import { increment, decrement } from './store/counter/counterSlice'
+// import { useSelector, useDispatch } from 'react-redux'
+// import { increment, decrement } from './store/counter/counterSlice'
+import NoteForm from './components/NoteForm'
+import NotesList from './components/NotesList'
 
 function App() {
-  const count = useSelector((state) => state.counter)
-  const dispatch = useDispatch()
-
   return (
     <div>
-      <h1>Hellow</h1>
-      <h1>Sample Counter App</h1>
-      <button onClick={() => dispatch(increment())}>Increment</button>
-      <h4>{count}</h4>
-      <button onClick={() => dispatch(decrement())}>Decrement</button>
+      <h1>Notes App by Thoufiq</h1>
+      <NoteForm />
+      <NotesList />
     </div>
   )
 }

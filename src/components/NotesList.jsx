@@ -42,7 +42,7 @@ const NotesList = () => {
   };
 
   return (
-    <div className="notes-list">
+    <div className="notes-list w-full flex justify-between items-center gap-2 p-10 flex-wrap">
       {notes.map((note) => (
         <div key={note.id} className="note-card">
           {editingNote && editingNote.id === note.id ? (
@@ -76,19 +76,19 @@ const NotesList = () => {
               </div>
             </form>
           ) : (
-            <>
-              <h2>{note.title}</h2>
-              <p>{note.content}</p>
-              <p>{note.date}</p>
-              <div className="note-actions">
-                <button onClick={() => dispatch(deleteNotes(note.id))} className="delete-btn">
+            <div className="border border-white p-4 rounded bg-zinc-800 text-zinc-200">
+              <h2 className="text-3xl font-bold py-2">{note.title}</h2>
+              <p className="text-xl font-semibold py-2">{note.content}</p>
+              <p className="text-sm">{note.date}</p>
+              <div className="note-actions py-2 flex gap-2">
+                <button onClick={() => dispatch(deleteNotes(note.id))} className="delete-btn bg-red-500 p-3 rounded">
                   Delete
                 </button>
-                <button onClick={() => handleEdit(note)} className="edit-btn">
+                <button onClick={() => handleEdit(note)} className="edit-btn bg-green-500 p-3 rounded">
                   Edit
                 </button>
               </div>
-            </>
+            </div>
           )}
         </div>
       ))}

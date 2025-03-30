@@ -1,4 +1,4 @@
-import './App.css'
+// import './App.css'
 // import { useSelector, useDispatch } from 'react-redux'
 // import { increment, decrement } from './store/counter/counterSlice'
 import NoteForm from './components/NoteForm'

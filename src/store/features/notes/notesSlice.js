@@ -16,9 +16,13 @@ export const notesSlice = createSlice({
     },
     editNotes: (state, action) => {
       const { id, title, content } = action.payload;
-      const note = state.notes.find((note) => note.id === id);
-      if (note) {
-        (note.title = title), (note.content = content);
+      const noteIndex = state.notes.findIndex((note) => note.id === id);
+      if (noteIndex !== -1) {
+        state.notes[noteIndex] = {
+          ...state.notes[noteIndex],
+          title,
+          content
+        };
       }
     },
   },

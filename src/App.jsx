@@ -6,10 +6,12 @@ import NotesList from './components/NotesList'
 
 function App() {
   return (
-    <div>
-      <h1>Notes App by Thoufiq</h1>
+    <div className='w-full bg-black/90 min-h-screen text-white flex flex-col justify-center items-center'>
+      
+      <h1 className='text-5xl font-bold p-7'>Notes App by Thoufiq</h1>
       <NoteForm />
       <NotesList />
+      
     </div>
   )
 }
